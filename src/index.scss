@@ -1,0 +1,20 @@
+$main-color: #333;
+$main-color-text: white;
+$invalid-color: rgb(253, 52, 52);
+
+:export {
+  main-color: $main-color;
+  main-color-text: $main-color-text;
+  invalid-color: $invalid-color;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

@@ -1,0 +1,91 @@
+.entity {
+  width: 100%;
+  min-height: 6rem;
+  max-width: 60rem;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.content {
+  flex: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0.5rem 0;
+}
+
+.title {
+  text-align: center;
+  font-weight: bold;
+  flex: 100%;
+  margin-bottom: 1rem;
+}
+
+.lock-icon {
+  font-size: 1.7rem;
+  margin: auto;
+}
+
+.public .private {
+  flex: 10%;
+  text-align: center;
+}
+
+.public {
+  color: green;
+}
+
+.private {
+  color: red;
+}
+
+.accesscode {
+  flex: 40%;
+  text-align: center;
+}
+
+.tag {
+  flex: 40%;
+  text-align: center;
+}
+
+.editbtn {
+  flex: 45%;
+}
+
+.deletebtn {
+  flex: 45%;
+}
+
+@media (min-width: 31.25rem) {
+  .title {
+    text-align: left;
+    flex: 40%;
+    margin-bottom: 0;
+  }
+
+  .public {
+    flex: 5%;
+  }
+
+  .private {
+    flex: 5%;
+  }
+
+  .accesscode {
+    flex: 15%;
+  }
+
+  .tag {
+    flex: 10%;
+  }
+
+  .editbtn {
+    flex: 10%;
+  }
+
+  .deletebtn {
+    flex: 10%;
+  }
+}

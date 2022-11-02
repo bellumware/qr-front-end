@@ -1,0 +1,23 @@
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  i {
+    flex: 40%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 0.2rem;
+  }
+
+  p {
+    flex: 60%;
+    padding: 0.2rem;
+  }
+}
+
+.sidebar-item:hover {
+  background-color: rgb(184, 184, 184);
+  cursor: pointer;
+}
