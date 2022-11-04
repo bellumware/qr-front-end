@@ -26,12 +26,12 @@
 
 @media (min-width: 50rem) {
   .sidebar {
-    width: 30vw;
+    width: 20vw;
   }
 
   @keyframes move-side-bar {
     0% {
-      transform: translateX(-30vw);
+      transform: translateX(-20vw);
     }
     100% {
       transform: translateX(0vw);

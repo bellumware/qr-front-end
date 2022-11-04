@@ -6,6 +6,11 @@ import SideBarItem from "./SideBarItem";
 
 const Navigation = () => {
   const [openSideBar, setOpenSideBar] = useState(false);
+
+  const closeSideBar = () => {
+    setOpenSideBar(false);
+  };
+
   return (
     <>
       <header className="main-header">
@@ -29,10 +34,25 @@ const Navigation = () => {
           </ul>
         </nav>
       </header>
-      <SideBar openSideBar={openSideBar} onClose={() => setOpenSideBar(false)}>
-        <SideBarItem leftIcon="person" text="Login" linkTo="/" />
-        <SideBarItem leftIcon="home" text="Home" linkTo="/" />
-        <SideBarItem leftIcon="home" text="Entities" linkTo="/entities" />
+      <SideBar openSideBar={openSideBar} onClose={closeSideBar}>
+        <SideBarItem
+          leftIcon="person"
+          text="Login"
+          linkTo="/login"
+          onClick={closeSideBar}
+        />
+        <SideBarItem
+          leftIcon="home"
+          text="Home"
+          linkTo="/"
+          onClick={closeSideBar}
+        />
+        <SideBarItem
+          leftIcon="home"
+          text="Entities"
+          linkTo="/entities"
+          onClick={closeSideBar}
+        />
       </SideBar>
       <div className="header-space" />
     </>

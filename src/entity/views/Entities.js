@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useApi } from "../../common";
 import { Content } from "../../ui";
+import Loader from "../../ui/Loader";
 import EntityItem from "../components/EntityItem";
 
 import EntitiesStyle from "./entities.module.scss";
@@ -55,20 +56,13 @@ const Entities = () => {
     );
   }, []);
 
-  const entity = {
-    id: 1,
-    title: "Una entidad",
-    isPrivate: true,
-    isCodeAccessible: false,
-    accessCode: "",
-    tag: {
-      tag: "animal",
-    },
-  };
+  
+
 
   return (
     <Content className={EntitiesStyle["entities-content"]}>
       <h1 style={{ flex: "100%", textAlign: "center" }}>entities</h1>
+      {isLoading && <Loader size={8}></Loader>}
       {entities.map((entity) => (
         <EntityItem key={entity.id} entity={entity} />
       ))}

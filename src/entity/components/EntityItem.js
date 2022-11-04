@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { Button, Card, CardContent } from "../../ui";
 
 import entityStyle from "./entityItem.module.scss";
@@ -7,14 +8,28 @@ const EntityItem = ({ entity }) => {
   const privacyStyle = entity.isPrivate
     ? entityStyle.private
     : entityStyle.public;
-  let privacy = <i className={`${"material-icons"} ${entityStyle["lock-icon"]}`}>lock_open</i>;
+  let privacy = (
+    <i className={`${"material-icons"} ${entityStyle["lock-icon"]}`}>
+      lock_open
+    </i>
+  );
   if (entity.isPrivate) {
-    privacy = <i className={`${"material-icons"} ${entityStyle["lock-icon"]}`}>lock_outline</i>;
+    privacy = (
+      <i className={`${"material-icons"} ${entityStyle["lock-icon"]}`}>
+        lock_outline
+      </i>
+    );
   }
 
   let accessCode = entity.isCodeAccessible
     ? entity.accessCode
     : "no access code";
+
+  const navigate = useNavigate();
+
+  const goToEditEntity = () => {
+    navigate(`/entity/${entity.id}`);
+  };
 
   return (
     <Card className={entityStyle.entity}>
@@ -27,6 +42,7 @@ const EntityItem = ({ entity }) => {
           color="yellow"
           startIcon="edit"
           className={entityStyle.editbtn}
+          onClick={goToEditEntity}
         ></Button>
         <Button
           color="red"
